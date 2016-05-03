@@ -15,7 +15,9 @@ object Main {
       val in = new BufferedSource(s.getInputStream()).getLines()
       val out = new PrintStream(s.getOutputStream())
 
-      out.println(in.next())
+      val answer = "HTTP/1.1 200 OK\nServer: super fast mexmat server\nContent-Type: text/html\nContent-Length: 1\n\n";
+      // out.println(answer)
+      out.println("Answer:\n" ++ in.next() ++ "\n/answer")
       out.flush()
       s.close()
     }
