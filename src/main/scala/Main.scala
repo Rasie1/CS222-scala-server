@@ -6,10 +6,8 @@ object Main {
     def run() = {
       val out = new PrintWriter(socket.getOutputStream(), true)
       val in = new BufferedReader(new InputStreamReader(socket.getInputStream()))
-
       var inputLine = in.readLine()
-      while (inputLine != null && inputLine != "\n\n")
-      {
+      while (inputLine != null && inputLine != "\n\n") {
         val answer = "HTTP/1.1 200 OK\nServer: super fast mexmat server\nContent-Type: text/html\nContent-Length: 1\n\n"
         out.println(answer + inputLine.charAt(7))
         out.flush()
